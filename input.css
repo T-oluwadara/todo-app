@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  overflow: hidden;
+}
+
+.display-none {
+  @apply hidden;
+}
+
+.check-mark {
+  transition: all, 0.25s;
+}
+
+.check-mark img {
+  visibility: hidden;
+}
+
+.check-mark:hover,
+.check-mark.checked {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+
+.check-mark:hover img,
+.check-mark.checked img {
+  visibility: visible;
+}
+
+.new-todo-text {
+  transition: all, 0.25s, ease;
+  cursor: pointer;
+}
+
+.new-todo-text:hover {
+  transform: translateY(-2px);
+}
+
+.new-todo-text.checked {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
+}
+
+.items-status p:hover {
+  color: hsl(220, 98%, 61%);
+}

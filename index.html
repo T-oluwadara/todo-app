@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="input.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body class="">
+    <header class="px-5 md:px-40 xl:px-96 py-14 md:pt-20 md:pb-20 bg-lightModeImg bg-no-no-repeat bg-cover bg-center dark:bg-darkModeImg">
+      <div class="flex flex-row justify-between">
+        <div class="">
+          <h2 class="text-white md:font-bold text-3xl md:text-4xl">T O D O</h2>
+        </div>
+        <div class="">
+          <img src="images/icon-moon.svg" alt="" class="moon-icon cursor-pointer" />
+          <img src="images/icon-sun.svg" alt="" class="sun-icon cursor-pointer" />
+        </div>
+      </div>
+
+      <div class="new-todo mt-10 z-0 check-box bg-white rounded shadow-lg px-3 md:px-5 py-5 dark:bg-veryDarkDesaturatedBlue">
+        <div class="flex flex-row justify-start">
+          <div class="check">
+            <div class="check-mark items-center h-6 w-6 rounded-full border dark:border-veryDarkGrayishBlue3 cursor-pointer"></div>
+          </div>
+          <div class="new-input">
+            <form action="" onsubmit="addItem(event)"><input type="text" id="input-todo" class="pl-5 text-darkGrayishBlue dark:text-lightGrayishBlue bg-inherit outline-0 placeholder:text-veryDarkGrayishBlue2" placeholder="Create a new todo...." /></form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="w-full absolute h-full bg-gray-100 dark:bg-veryDarkBlue px-5 md:px-40 xl:px-96 pt-20">
+      <div class="-mt-28 bg-white rounded shadow-lg dark:bg-veryDarkDesaturatedBlue">
+        <div class="todo-list">
+          <div class="todo-item flex flex-row justify-start py-5 px-3 md:px-5 border-b dark:border-veryDarkGrayishBlue3">
+            <div class="check">
+              <div class="check-mark flex justify-center items-center h-6 w-6 rounded-full border dark:border-veryDarkGrayishBlue3 cursor-pointer">
+                <img src="images/icon-check.svg" alt="" class="mx-auto" />
+              </div>
+            </div>
+            <div class="new-todo-text">
+              <p class="pl-5 text-darkGrayishBlue dark:text-lightGrayishBlue">Create a new todo....</p>
+            </div>
+          </div>
+
+          <div class="todo-item flex flex-row justify-start py-5 px-3 md:px-5 border-b dark:border-veryDarkGrayishBlue3">
+            <div class="check">
+              <div class="check-mark flex justify-center items-center h-6 w-6 rounded-full border dark:border-veryDarkGrayishBlue3 cursor-pointer">
+                <img src="images/icon-check.svg" alt="" class="mx-auto" />
+              </div>
+            </div>
+            <div class="new-todo-text">
+              <p class="pl-5 text-darkGrayishBlue dark:text-lightGrayishBlue">Create a new todo....</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="todo-list-info cursor-pointer text-darkGrayishBlue flex flex-row flex-wrap justify-between px-3 md:px-5 py-5 dark:text-veryDarkGrayishBlue2">
+          <div>
+            <p class="todo-item-left">items left</p>
+          </div>
+          <div class="items-status hidden md:flex flex-row flex-wrap justify-between space-x-3">
+            <p class="">All</p>
+            <p class="">Active</p>
+            <p class="">Completed</p>
+          </div>
+
+          <div class="items-clear">
+            <button class="items-clear-button">Clear Completed</button>
+          </div>
+        </div>
+      </div>
+      <div class="items-status mt-10 bg-white text-darkGrayishBlue shadow-lg md:hidden dark:bg-veryDarkDesaturatedBlue flex flex-row justify-between px-16 py-5">
+        <p class="">All</p>
+        <p class="">Active</p>
+        <p class="">Completed</p>
+      </div>
+    </section>
+  </body>
+</html>
